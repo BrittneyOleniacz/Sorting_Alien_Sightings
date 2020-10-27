@@ -55,7 +55,3 @@ function dosomething(){
         //append td element to tr element previously created
         });
 }
-
-
-
-// YOUR CODE HERE!

@@ -7,13 +7,13 @@ var tableData = data;
 tableData.forEach(element => {
     //each td element corresponds to the dictionaries keys in list
     //on each iteration will make a new tr element
+    let  datetime =element["datetime"]    
     let tableRow = tbody.append("tr")
-    let state = element["state"]    
-    tableRow.append("td").text(state)
+    tableRow.append("td").text(datetime)
     let city = element["city"]
     tableRow.append("td").text(city)
-    let  datetime =element["datetime"]
-    tableRow.append("td").text(datetime)
+    let state = element["state"]  
+    tableRow.append("td").text(state) 
     let country = element["country"]
     tableRow.append("td").text(country)
     let shape = element["shape"]
@@ -37,21 +37,21 @@ function dosomething(){
     datafilter.forEach(element => {
         //each td element corresponds to the dictionaries keys in list
         //on each iteration will make a new tr element
-        let tableRow = tbody.append("tr")
-        let state = element["state"]    
-        tableRow.append("td").text(state)
-        let city = element["city"]
-        tableRow.append("td").text(city)
-        let  datetime =element["datetime"]
-        tableRow.append("td").text(datetime)
-        let country = element["country"]
-        tableRow.append("td").text(country)
-        let shape = element["shape"]
-        tableRow.append("td").text(shape)
-        let durationMinutes = element ["durationMinutes"]
-        tableRow.append("td").text(durationMinutes)
-        let comments = element["comments"]
-        tableRow.append("td").text(comments) 
-        //append td element to tr element previously created
-        });
+    let  datetime =element["datetime"]    
+    let tableRow = tbody.append("tr")
+    tableRow.append("td").text(datetime)
+    let city = element["city"]
+    tableRow.append("td").text(city)
+    let state = element["state"]  
+    tableRow.append("td").text(state) 
+    let country = element["country"]
+    tableRow.append("td").text(country)
+    let shape = element["shape"]
+    tableRow.append("td").text(shape)
+    let durationMinutes = element ["durationMinutes"]
+    tableRow.append("td").text(durationMinutes)
+    let comments = element["comments"]
+    tableRow.append("td").text(comments) 
+    //append td element to tr element previously created
+    });
 }

@@ -1,4 +1,6 @@
 
+//Note: Level 1 is over simplified and bloated to show basic concept. For more advanced methods and elequent code, please see Level 2. 
+
 //d3 select of the tbody html element
 var tbody =  d3.select("tbody")
 // from data.js
@@ -6,8 +8,8 @@ var tableData = data;
 //iterate over data    
 tableData.forEach(element => {
     //each td element corresponds to the dictionaries keys in list
-    //on each iteration will make a new tr element
-    let  datetime =element["datetime"]    
+    //on each iteration make a new tr element
+    let datetime = element["datetime"]    
     let tableRow = tbody.append("tr")
     tableRow.append("td").text(datetime)
     let city = element["city"]
@@ -35,9 +37,7 @@ function dosomething(){
         element["datetime"] === dateInput
     )
     datafilter.forEach(element => {
-        //each td element corresponds to the dictionaries keys in list
-        //on each iteration will make a new tr element
-    let  datetime =element["datetime"]    
+    let datetime = element["datetime"]    
     let tableRow = tbody.append("tr")
     tableRow.append("td").text(datetime)
     let city = element["city"]

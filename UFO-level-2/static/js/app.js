@@ -1,127 +1,55 @@
-var tbody =  d3.select("tbody")
-var tableData = data;  
-tableData.forEach(element => {
-    let  datetime =element["datetime"]    
-    let tableRow = tbody.append("tr")
-    tableRow.append("td").text(datetime)
-    let city = element["city"]
-    tableRow.append("td").text(city)
-    let state = element["state"]  
-    tableRow.append("td").text(state) 
-    let country = element["country"]
-    tableRow.append("td").text(country)
-    let shape = element["shape"]
-    tableRow.append("td").text(shape)
-    let durationMinutes = element ["durationMinutes"]
-    tableRow.append("td").text(durationMinutes)
-    let comments = element["comments"]
-    tableRow.append("td").text(comments) 
-    });
+var tableData = data;
 
+var button = d3.select("#filter-btn");
+var form = d3.select("form");
 
-id="filter-btn"
-    d3.select("#filter-btn").on("click", dosomething)
-    function dosomething(){
-        tbody.html("")
-        let dateInput = d3.select("#datetime").property("value");
-        let dataFilter = tableData.filter(element => 
-            element["datetime"] === dateInput);
-            dataFilter.forEach(element => {
-                let datetime =element["datetime"]    
-                let tableRow = tbody.append("tr")
-                tableRow.append("td").text(datetime)
-                let city = element["city"]
-                tableRow.append("td").text(city)
-                let state = element["state"]  
-                tableRow.append("td").text(state) 
-                let country = element["country"]
-                tableRow.append("td").text(country)
-                let shape = element["shape"]
-                tableRow.append("td").text(shape)
-                let durationMinutes = element ["durationMinutes"]
-                tableRow.append("td").text(durationMinutes)
-                let comments = element["comments"]
-                tableRow.append("td").text(comments) 
-                });
+button.on("click", allthethings); 
+form.on("submit", allthethings);
+
+function allthethings() {
+    d3.event.preventDefault();
+    var results = tableData;
+
+//<---------First Method--------->//   
+    // See Level 1
+
+//<---------Second Method--------->//   
+    // const datetimetofilter = d3.select("#datetime").property("value");
+    // if (datetimetofilter != "")
+    //     results = results.filter((blah)=> blah['datetime'] == datetimetofilter);
+    
+    // const citytofilter = d3.select("#city").property("value");
+    // if (citytofilter != "")
+    //     results = results.filter((blah)=> blah['city'] == citytofilter);  
+
+//<---------Third Method--------->//   
+    // results = allthefilters("datetime", results);
+    // results = allthefilters("city", results);
+
+//<---------Fourth Method--------->//  
+    const allfilters = d3.selectAll('input').nodes().map(a => a.id);
+    for (f in allfilters) {
+        results = allthefilters(allfilters[f], results); 
     }
-id="filter-btn"        
-    d3.select("#filter-btn").on("click", dosomething)
-    function dosomething(){
-        tbody.html("")
-        let stateInput = d3.select("#state").property("value");
-        let dataFilter = tableData.filter(element => 
-            element["state"] === stateInput);
-        dataFilter.forEach(element => {
-            let datetime =element["datetime"]    
-            let tableRow = tbody.append("tr")
-            tableRow.append("td").text(datetime)
-            let city = element["city"]
-            tableRow.append("td").text(city)
-            let state = element["state"]  
-            tableRow.append("td").text(state) 
-            let country = element["country"]
-            tableRow.append("td").text(country)
-            let shape = element["shape"]
-            tableRow.append("td").text(shape)
-            let durationMinutes = element ["durationMinutes"]
-            tableRow.append("td").text(durationMinutes)
-            let comments = element["comments"]
-            tableRow.append("td").text(comments) 
-            });
-        }
-        
-id="filter-btn"
-    d3.select("#filter-btn").on("click", dosomething)             
-    function dosomething(){
-        tbody.html("")
-        let cityInput = d3.select("city").property("value");
-        let dataFilter = tableData.filter(element => 
-                element["city"] === cityInput);
-            dataFilter.forEach(element => {
-                let  datetime =element["datetime"]    
-                let tableRow = tbody.append("tr")
-                tableRow.append("td").text(datetime)
-                let city = element["city"]
-                tableRow.append("td").text(city)
-                let state = element["state"]  
-                tableRow.append("td").text(state) 
-                let country = element["country"]
-                tableRow.append("td").text(country)
-                let shape = element["shape"]
-                tableRow.append("td").text(shape)
-                let durationMinutes = element ["durationMinutes"]
-                tableRow.append("td").text(durationMinutes)
-                let comments = element["comments"]
-                tableRow.append("td").text(comments) 
-                });
-        }
+    renderTable(results); 
+}
 
-//====================================================================//
-        //Filtering Country
-//====================================================================//       
-// id="filter-btn"
-//     d3.select("#filter-btn").on("click", dosomething)
-//     function dosomething(){    
-//         tbody.html("")
-//         let dataInput = d3.select("#country").property("value");
-//         let dataFilter = tableData.filter(element => 
-//             element["country"] === dataInput
-//         )
-//         dataFilter.forEach(element => {
-//             let datetime =element["datetime"]    
-//             let tableRow = tbody.append("tr")
-//             tableRow.append("td").text(datetime)
-//             let city = element["city"]
-//             tableRow.append("td").text(city)
-//             let state = element["state"]  
-//             tableRow.append("td").text(state) 
-//             let country = element["country"]
-//             tableRow.append("td").text(country)
-//             let shape = element["shape"]
-//             tableRow.append("td").text(shape)
-//             let durationMinutes = element ["durationMinutes"]
-//             tableRow.append("td").text(durationMinutes)
-//             let comments = element["comments"]
-//             tableRow.append("td").text(comments) 
-//             });
-//         }   
+function allthefilters(dafilter, dadata) {
+    const tofilter = d3.select(`#$(dafilter)`).property("value");
+    if (tofilter != "") return dadata;
+    return dadata.filter(blah) => {blah[dafilter] == tofilter};
+}
+
+function renderTable(table) {
+    var tbody = d3.select("tbody");
+    tbody.html("")
+    table.forEach((ugh) => {
+        var row = tbody.append("tr")
+        for (let key in ugh) {
+            var cell = row.append("td");
+            cell.text(ugh[key]);
+        }        
+    });
+}
+renderTable(data);
+

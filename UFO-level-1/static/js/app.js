@@ -1,57 +1,31 @@
-
-//Note: Level 1 is over simplified and bloated to show basic concept. For more advanced methods and elequent code, please see Level 2. 
-
-//d3 select of the tbody html element
-var tbody =  d3.select("tbody")
-// from data.js
 var tableData = data;
-//iterate over data    
-tableData.forEach(element => {
-    //each td element corresponds to the dictionaries keys in list
-    //on each iteration make a new tr element
-    let datetime = element["datetime"]    
-    let tableRow = tbody.append("tr")
-    tableRow.append("td").text(datetime)
-    let city = element["city"]
-    tableRow.append("td").text(city)
-    let state = element["state"]  
-    tableRow.append("td").text(state) 
-    let country = element["country"]
-    tableRow.append("td").text(country)
-    let shape = element["shape"]
-    tableRow.append("td").text(shape)
-    let durationMinutes = element ["durationMinutes"]
-    tableRow.append("td").text(durationMinutes)
-    let comments = element["comments"]
-    tableRow.append("td").text(comments) 
-    //append td element to tr element previously created
-    });
 
-//create action listener
-id="filter-btn"
-d3.select("#filter-btn").on("click", dosomething)
-function dosomething(){
-    tbody.html("")
-    let dateInput = d3.select("#datetime").property("value");
-    let datafilter = tableData.filter(element => 
-        element["datetime"] === dateInput
-    )
-    datafilter.forEach(element => {
-    let datetime = element["datetime"]    
-    let tableRow = tbody.append("tr")
-    tableRow.append("td").text(datetime)
-    let city = element["city"]
-    tableRow.append("td").text(city)
-    let state = element["state"]  
-    tableRow.append("td").text(state) 
-    let country = element["country"]
-    tableRow.append("td").text(country)
-    let shape = element["shape"]
-    tableRow.append("td").text(shape)
-    let durationMinutes = element ["durationMinutes"]
-    tableRow.append("td").text(durationMinutes)
-    let comments = element["comments"]
-    tableRow.append("td").text(comments) 
-    //append td element to tr element previously created
+var button = d3.select("#filter-btn");
+var form = d3.select("form")
+
+button.on("click", allthethings); 
+form.on("submit", allthethings);
+
+function allthethings() {
+    d3.event.preventDefault();
+    const thingtofilter = d3.select("#datetime").property("value");
+    var results = tableData.filter((info) => info['datetime'] == thingtofilter);
+
+    renderTable(results);
+}
+
+function renderTable(table) {
+    var tbody = d3.select("tbody");
+    tbody.html("");
+    table.forEach((factor) => {
+        var row = tbody.append("tr");
+		for (let key in factor) {
+			var cell = row.append("td");
+            cell.text(factor[key]);
+		}
     });
 }
+
+renderTable(data); 
+
+

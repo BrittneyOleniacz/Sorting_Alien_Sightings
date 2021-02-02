@@ -1,6 +1,6 @@
 # Alien Sightings
 
-    <img align="right" src="images/old_school.png">
+<img align="right" src="images/old_school.png">
 
 
 ## Background

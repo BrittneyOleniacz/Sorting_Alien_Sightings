@@ -1,18 +1,15 @@
 var tableData = data;
 
-var button = d3.select("#filter-btn");
+var button1 = d3.select("#filter-btn");
 var form = d3.select("form");
 
-button.on("click", allthethings); 
+button1.on("click", allthethings); 
 form.on("submit", allthethings);
  
 function allthethings() {
     d3.event.preventDefault();
-
     var results = tableData; 
-    
     const allfilters = d3.selectAll('input').nodes().map(a => a.id);
-    
     for (f in allfilters) {
 		results = allthefilters(allfilters[f],results);
 	}

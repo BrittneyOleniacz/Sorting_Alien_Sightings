@@ -1,6 +1,7 @@
 # Alien Sightings
 
-![titleimage](images/saucer.png)
+<img align="right" src="images/old_school.png">
+
 
 ## Background
 WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and the details of sightings have been collected from eye-witness reports. This information must be made available online for the world to see as proof of alien life. 
@@ -16,7 +17,7 @@ SOLUTION: Write code that will create a table dynamically based using the provid
 * Organize table into columns for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
 * Use a date form in your HTML document and write corresponding JavaScript code that will take user input and search through the `date/time` column to find rows that match.
 
-![dt](images/datetime.png)
+![dt](images/datetime.PNG)
 
 ### Multiple Search Categories 
 * Using multiple `input` tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters and search for UFO sightings using the following criteria based on the table columns:
@@ -26,4 +27,4 @@ SOLUTION: Write code that will create a table dynamically based using the provid
   4. `country`
   5. `shape`
 
-![all](images/UFO-all_fields/allfilters.png)
+![all](images/allfilters.PNG)

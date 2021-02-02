@@ -1,9 +1,11 @@
 # Alien Sightings
 
-![titleimage](images/old_school.png){:style="float: right;"}
-
 ## Background
 WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and the details of sightings have been collected from eye-witness reports. This information must be made available online for the world to see as proof of alien life. 
+
+<div style="float: right">
+    ![titleimage](images/old_school.png)
+</div>
 
 PROBELM: Our collection is too large to search through manually and the most dedicated followers are complaining that they are having trouble locating specific reports. 
 

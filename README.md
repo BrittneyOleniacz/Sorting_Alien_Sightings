@@ -1,10 +1,7 @@
-# javascript-challenge
-
-# JavaScript Homework - JavaScript and DOM Manipulation
+# Alien Sightings
 
 ## Background
-
-WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and we here at `ALIENS-R-REAL` have collected all of the eye-witness reports we could to prove it! All we need to do now is put this information online for the world to see and then the matter will finally be put to rest.
+WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and the details of sightings have been collected from eye-witness reports. This information must be made available online for the world to see as proof of alien life. 
 
 PROBELM: Our collection is too large to search through manually and the most dedicated followers are complaining that they are having trouble locating specific reports. 
 
@@ -26,3 +23,4 @@ SOLUTION: Write code that will create a table dynamically based upon a [dataset 
   3. `state`
   4. `country`
   5. `shape`
+

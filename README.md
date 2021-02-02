@@ -26,4 +26,4 @@ SOLUTION: Write code that will create a table dynamically based using the provid
   4. `country`
   5. `shape`
 
-![all](images/allfilters.png)
+![all](images/UFO-all_fields/allfilters.png)

@@ -5,7 +5,7 @@ WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and the details 
 
 PROBELM: Our collection is too large to search through manually and the most dedicated followers are complaining that they are having trouble locating specific reports. 
 
-SOLUTION: Write code that will create a table dynamically based using the ([alien sighting data](StarterCode/static/js/data.js)). Provide users the option to filter the table data for specific values using JavaScript, HTML, and CSS, and D3.js. 
+SOLUTION: Write code that will create a table dynamically based using the provided [data](StarterCode/static/js/data.js) of alien sightings. Provide users the option to filter the table data for specific values using JavaScript, HTML, and CSS, and D3.js. 
 
 ## Tasks
 ### Automatic Table and Date Search

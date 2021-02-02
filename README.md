@@ -16,7 +16,7 @@ SOLUTION: Write code that will create a table dynamically based using the provid
 * Organize table into columns for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
 * Use a date form in your HTML document and write corresponding JavaScript code that will take user input and search through the `date/time` column to find rows that match.
 
-![datetime](images/datetime.png)
+![dt](images/datetime.png)
 
 ### Multiple Search Categories 
 * Using multiple `input` tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters and search for UFO sightings using the following criteria based on the table columns:
@@ -26,4 +26,4 @@ SOLUTION: Write code that will create a table dynamically based using the provid
   4. `country`
   5. `shape`
 
-![datetime](images/allfilters.png)
+![all](images/allfilters.png)

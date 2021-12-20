@@ -4,11 +4,10 @@
 
 
 ## Background
-WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and the details of sightings have been collected from eye-witness reports. This information must be made available online for the world to see as proof of alien life. 
+The extra-terrestrial has come to Earth and the details of sightings have been collected from eye-witness reports. 
 
-PROBELM: Our collection is too large to search through manually and the most dedicated followers are complaining that they are having trouble locating specific reports. 
-
-SOLUTION: Write code that will create a table dynamically based using the provided [data](StarterCode/static/js/data.js) of alien sightings. Provide users the option to filter the table data for specific values using JavaScript, HTML, and CSS, and D3.js. 
+## Objective 
+Write code that will create a table dynamically based using data records of alien sightings. Provide users the option to filter the table data for specific values using JavaScript, HTML, and CSS, and D3.js. 
 
 ## Tasks
 ### Automatic Table and Date Search

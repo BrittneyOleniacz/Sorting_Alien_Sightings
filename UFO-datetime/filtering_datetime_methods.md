@@ -1,6 +1,7 @@
-//================================//<---------First Method--------->//================================// 
+<---------First Method--------->
 // Note: this version is oversimplified and bloated to illustrate basic concept.
 
+```
 // d3 select of the tbody html element
 var tbody =  d3.select("tbody")
 // from data.js
@@ -26,8 +27,10 @@ tableData.forEach(element => {
     tableRow.append("td").text(comments) 
     // append td element to tr element previously created
     });
+```
 
 // create action listener
+```
 id="filter-btn"
 d3.select("#filter-btn").on("click", dosomething)
 function dosomething(){
@@ -55,11 +58,14 @@ function dosomething(){
     // append td element to tr element previously created
     });
 }
+```
 // ^^^ is painfully repetitive as it takes each cell in seperate columns of every row that has the desired datetime and appends it per cell along each row.  
 // to streamline the process, a const can be created to select the desired datetime 
+```
 
+<---------Second Method--------->
 
-//================================//<---------Second Method--------->//================================//
+```
 //from data.js
 var tableData = data;
 
@@ -101,11 +107,15 @@ tableData.forEach((factor) => {
         cell.text(value);
     });
 });
+```
+
 // ^^^ code is an improvement but still contains duplicated code. We can do better.
 
-//================================//<---------Third Method--------->//================================//
+<---------Third Method--------->
 // To avoid duplicate code, create variables for "renderTable"
 // Look for differences in the duplicates, i.e results.forEach vs tableData.forEach
+
+```
 function allthethings() {
     d3.event.preventDefault();
     const thingtofilter = d3.select("#datetime").property("value");
@@ -126,13 +136,16 @@ function renderTable(table) {
     });
 }
 
-renderTable(data); 
+renderTable(data);
+```
 
 //...but, what exactly does that "Object" mean? 
 // Essentially, the "Object" acts as a for loop that requires additional parameters/information to operate.
 // ^^^ is decent, but the code can be further condensed if the "Object" statement is rephrased as a for loop. 
 
-//================================//<---------Fourth "Final" Method--------->//================================//
+<---------Fourth "Final" Method--------->
+
+```
 function allthethings() {
     d3.event.preventDefault();
     const thingtofilter = d3.select("#datetime").property("value");
@@ -155,6 +168,8 @@ function renderTable(table) {
 }
 
 renderTable(data); 
+
+```
 
 
 

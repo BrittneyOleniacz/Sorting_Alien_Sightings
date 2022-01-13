@@ -62,7 +62,7 @@ function dosomething(){
 ```
 // ^^^ is painfully repetitive as it takes each cell in seperate columns of every row that has the desired datetime and appends it per cell along each row.  
 // to streamline the process, a const can be created to select the desired datetime 
-```
+
 
 <---------Second Method--------->
 
@@ -95,7 +95,9 @@ function allthethings() {
         });
     });
 }
+```
 
+```
 //display entire dataset/table when the page loads
 var tbody = d3.select("tbody");
 //clear the table before rendering results
